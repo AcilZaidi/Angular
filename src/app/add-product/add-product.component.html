@@ -1,0 +1,48 @@
+
+<form #f="ngForm">         <!--ngForm: controler toutes les inputs-->
+    <div class="form-group"  style="margin: 10px 100PX;">
+
+        
+
+          
+        <div class="mb-3">
+            <label  for="inlineFormCustomSelect">Id</label>
+            <input type="text" class="form-control" name="id" placeholder="enter id" [(ngModel)]="product.id" required min="1" #id="ngModel">
+            
+            </div>
+            <div class="alert alert-dark" role="alert" *ngIf="id.invalid && id.touched">
+                <div> Id is required!</div>
+        </div>
+    <div>
+        <label >Title</label>
+        <input type="text" class="form-control" name="title" placeholder="enter title" [(ngModel)]="product.title" required minlength="5" #title="ngModel">
+        <br>
+        <div class="alert alert-dark" role="alert" *ngIf="title.invalid && title.touched">
+            <div *ngIf="title.errors?.['required']">Title is required!</div> 
+            <div *ngIf="title.errors?.['minlength']">Title must have 5 characters</div> 
+        </div>
+    </div>
+
+      <div class="form-group">
+        <label  >Quantity</label>
+        <input type="text" class="form-control" name="quantity" placeholder="enter quantity" [(ngModel)]="product.quantity" required #quantity="ngModel">
+      </div>
+
+      <div class="alert alert-dark" role="alert" *ngIf="quantity.invalid && quantity.touched">
+       <div>Quantity is required!</div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label >Price</label>
+        <input type="text" class="form-control" name="price" placeholder="enter price" [(ngModel)]="product.price" required #price="ngModel">
+      </div>
+      <div class="alert alert-dark" role="alert" *ngIf="price.invalid && price.touched">
+        <div>price is required!</div>
+       </div>
+      <br>
+      
+      <button type="button" class="btn btn-success" [disabled]="f.invalid">Save</button>  <!--disabled: proprety binding-->
+                                                         <!--kent f blast "f.invalid" haka : product.id==null ama badltha khatr zedna fl form mloul blkol "ngForm"-->
+    </div>
+    
+  </form>

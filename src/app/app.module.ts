@@ -9,6 +9,7 @@ import { OffresEmploisComponent } from './offres-emplois/offres-emplois.componen
 import { NotFountComponent } from './not-fount/not-fount.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
  
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     OffresEmploisComponent,
     NotFountComponent,
     ProductDetailComponent,
-    AddProductComponent 
+    AddProductComponent,
+    TemplateDrivenFormComponentComponent 
   ],
   imports: [
     BrowserModule,

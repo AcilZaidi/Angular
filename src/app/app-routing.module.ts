@@ -6,6 +6,7 @@ import { NotFountComponent } from './not-fount/not-fount.component';
 import { OffresEmploisComponent } from './offres-emplois/offres-emplois.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductsComponentComponent } from './products-component/products-component.component';
+import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
 
 
 const routes: Routes = [ 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path : 'addProduct' , component : AddProductComponent},
   { path: 'products', component: ProductsComponentComponent },
   { path: 'offres', component: OffresEmploisComponent },
+  {path :'templateDrivenForm' , component:TemplateDrivenFormComponentComponent},
 { path : '**' ,component :  NotFountComponent }];
 
 @NgModule({

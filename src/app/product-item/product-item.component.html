@@ -1,0 +1,12 @@
+<div>
+    <img src="../../assets/images/5f0b7189031725.5de839cf50769.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{prod.title}}</h5>
+      <p class="card-text"> quantity : {{prod.quantity}}</p>
+      <p class="card-text"> price : {{prod.price}}</p>
+      <p class="card-text"> likes : {{prod.like}}</p>
+      <#button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="prod.quantity==0" style="margin-right: 5px;">buy<#/button> 
+      <#button href="#" class="btn btn-primary" (click)="like(i)">like<#/button>
+      <button [routerLink]="[prod.id] "class="btn btn-info" >Learn More</button>
+    </div>
+</div>

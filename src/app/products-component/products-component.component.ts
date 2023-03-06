@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../core/model/Product';
 import { MethodServiceService } from '../method-service.service';
+import { ConsumerProductService } from '../services/consumer-product.service';
 import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
@@ -17,10 +18,14 @@ export class ProductsComponentComponent implements OnInit {
   
 
     
-  constructor(private serviceProduct : ProductServiceService, private calcul : MethodServiceService) { }
+  constructor(private serviceProduct : ProductServiceService, private calculProduct : MethodServiceService,private consumerProduct : ConsumerProductService) { }
 
   ngOnInit(): void {
-    this.listProdcut=this.serviceProduct.listProdcut;
+    //this.listProdcut=this.serviceProduct.listProdcut;
+    this.consumerProduct.getProduct().subscribe({
+      next :(data)=>this.listProdcut=data,
+      error:(e)=>console.log(e)
+    })
     
   }
   buy(i:number) {
@@ -29,6 +34,11 @@ export class ProductsComponentComponent implements OnInit {
    }
    like(i:number) {
     this.listProdcut[i].like++;
+   }
+   delete(id : number){
+    this.consumerProduct.deleteProduct(id).subscribe({
+      next :()=>this.listProdcut.filter((p)=>p.id != id)
+    })
    }
 
 
@@ -41,8 +51,8 @@ export class ProductsComponentComponent implements OnInit {
   
 
 }
-calculquantity(){
-   this.k=this.calcul.calculMethod(this.listProdcut,'quantity',0);
+// calculquantity(){
+//    this.k=this.calcul.calculMethod(this.listProdcut,'quantity',0);
   
-}
+// }
 }

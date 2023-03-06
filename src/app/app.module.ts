@@ -10,7 +10,8 @@ import { NotFountComponent } from './not-fount/not-fount.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
- 
+import { ProductItemComponent } from './product-item/product-item.component';
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +21,14 @@ import { TemplateDrivenFormComponentComponent } from './template-driven-form-com
     NotFountComponent,
     ProductDetailComponent,
     AddProductComponent,
-    TemplateDrivenFormComponentComponent 
+    TemplateDrivenFormComponentComponent,
+    ProductItemComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

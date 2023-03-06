@@ -1,7 +1,5 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <button href="#" class="btn btn-primary" (click)="calculquantity()">Get Alert</button>
-    {{k}}
     <div class="d-flex" style="margin-bottom: 50px;">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
       <button class="btn btn-outline-success" type="submit">Search</button>
@@ -10,7 +8,7 @@
  
     <div class="card" style="width: 18rem;" *ngFor="let p of listProdcut ,let i=index">
       <div *ngIf="priceMax<p.price || priceMax==null">
-      <img src="../../assets/images/5f0b7189031725.5de839cf50769.jpg" class="card-img-top" alt="...">
+      <img src="" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{p.title}}</h5>
         <p class="card-text"> quantity : {{p.quantity}}</p>
@@ -18,6 +16,8 @@
         <p class="card-text"> likes : {{p.like}}</p>
         <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0" style="margin-right: 5px;">buy</button> 
         <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
+        <button href="#" class="btn btn-primary" (click)="delete(i)">delete</button>
+        <div style="margin-top: 5px;"></div>
         <button [routerLink]="[p.id] "class="btn btn-info" >Learn More</button>
       </div>
       </div>
@@ -25,7 +25,7 @@
 
 
 
-
+</nav>
     <!--
     
 <nav class="navbar navbar-light bg-light">
@@ -36,3 +36,10 @@
     </form>
   </div>
 </nav>-->
+<br>
+<br>
+
+*
+
+
+ 
